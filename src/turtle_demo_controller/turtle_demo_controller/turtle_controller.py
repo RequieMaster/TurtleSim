@@ -4,6 +4,9 @@ import math
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
+from turtlesim.msg import SetPen
+from turtlesim.msg import TeleportAbsolute
+from turtlesim.msg import Spawn
 
 class Controller_Node(Node):
     def __init__(self):
