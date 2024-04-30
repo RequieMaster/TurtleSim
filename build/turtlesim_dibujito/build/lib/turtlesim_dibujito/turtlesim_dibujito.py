@@ -16,63 +16,92 @@ class TurtleController(Node):
         
         self.turtle_name = "turtle"
         self.turtle_counter = 1
-        
 
         self.desired_x = 0.0  
         self.desired_y = 0.0  
+        self.desired_x2 = 0.0  
+        self.desired_y2 = 0.0  
         self.err_threshhold = 0.1
-        self.wait_count = 300
         self.step = 0
 
         # Publishers and Subscriber
         self.my_pose_sub = self.create_subscription(Pose, "/turtle1/pose", self.pose_callback, 10)
+        self.my_pose_sub2 = self.create_subscription(Pose, "/turtle2/pose", self.pose_callback, 10)
         
         #http://wiki.ros.org/turtlesim#Published_Topics
         
         	#Velocity
         self.my_vel_command = self.create_publisher(Twist, "/turtle1/cmd_vel", 10) 
+        self.my_vel_command2 = self.create_publisher(Twist, "/turtle2/cmd_vel", 10) 
       
      ###TODO Servicion no se pueden usar para hacer publishers, usar mensajes custom
         	#Color
         self.cliColor = self.create_client(SetPen, '/turtle1/set_pen')
         self.reqColor = SetPen.Request()
+        self.cliColor2 = self.create_client(SetPen, '/turtle2/set_pen')
+        self.reqColor2 = SetPen.Request()
         
         	#Teleport
         self.cliTp = self.create_client(TeleportAbsolute, '/turtle1/teleport_absolute')
         self.reqTp = TeleportAbsolute.Request()
+        self.cliTp2 = self.create_client(TeleportAbsolute, '/turtle2/teleport_absolute')
+        self.reqTp2 = TeleportAbsolute.Request()
         
         	#Spawn
         self.cliSpawn = self.create_client(Spawn, '/turtle1/spawn')
         self.reqSpawn = Spawn.Request()
+        self.cliSpawn2 = self.create_client(Spawn, '/turtle2/spawn')
+        self.reqSpawn2 = Spawn.Request()
         
 
-    def send_request_Color(self,r, g, b, width, off):
+    def send_request_Color(self,r, g, b, width, off, num_turtle):
         self.get_logger().info("req Color")
-        self.reqColor.r = r
-        self.reqColor.b = b
-        self.reqColor.g = g
-        self.reqColor.width = width
-        self.reqColor.off = off
-        future = self.cliColor.call_async(self.reqColor)
+        if(num_turtle == 1):
+            self.reqColor.r = r
+            self.reqColor.b = b
+            self.reqColor.g = g
+            self.reqColor.width = width
+            self.reqColor.off = off
+            future = self.cliColor.call_async(self.reqColor)
+        else:
+            self.reqColor2.r = r
+            self.reqColor2.b = b
+            self.reqColor2.g = g
+            self.reqColor2.width = width
+            self.reqColor2.off = off
+            future = self.cliColor2.call_async(self.reqColor2)
         #rclpy.spin_until_future_complete(self, future)
         return future.result()
         
-    def send_request_Teleport(self, x, y, theta):
+    def send_request_Teleport(self, x, y, theta, num_turtle):
         self.get_logger().info("req TP")
-        self.reqTp.x = x
-        self.reqTp.y = y
-        self.reqTp.theta = theta
-        future = self.cliTp.call_async(self.reqTp)
+        if(num_turtle == 1):
+            self.reqTp.x = x
+            self.reqTp.y = y
+            self.reqTp.theta = theta
+            future = self.cliTp.call_async(self.reqTp)
+        else:
+            self.reqTp2.x = x
+            self.reqTp2.y = y
+            self.reqTp2.theta = theta
+            future = self.cliTp2.call_async(self.reqTp2)
         #rclpy.spin_until_future_complete(self, future)
         return future.result()
     
-    def send_request_Spawn(self, x, y, theta, name):
+    def send_request_Spawn(self, x, y, theta, name, num_turtle):
         self.get_logger().info("req Spawn")
-        self.reqSpawn.x = x
-        self.reqSpawn.y = y
-        self.reqSpawn.theta = theta
-        self.reqSpawn.name = name
-        future = self.cliSpawn.call_async(self.reqSpawn)
+        if(num_turtle == 1):
+            self.reqSpawn.x = x
+            self.reqSpawn.y = y
+            self.reqSpawn.theta = theta
+            self.reqSpawn.name = name
+            future = self.cliSpawn.call_async(self.reqSpawn)
+        else:
+            self.reqSpawn2.x = x
+            self.reqSpawn2.y = y
+            self.reqSpawn2.theta = theta
+            self.reqSpawn2.name = name
+            future = self.cliSpawn2.call_async(self.reqSpawn2)
         #rclpy.spin_until_future_complete(self, future)
         return future.result()  
 
@@ -143,27 +172,43 @@ class TurtleController(Node):
         self.get_logger().info(f"step_controller step: {self.step}")
   
         if(self.step == 0):
-            #self.desired_x = 0.0  
-            #self.desired_y = 1.5
             self.step += 1
         elif(self.step == 1):
-            self.send_request_Color(0,0,0,100,1)
-            self.send_request_Teleport(10.0,1.5,180.0)
-            self.step += 1
+            self.desired_x = 10.0  
+            self.desired_y = 1.3
+            self.send_request_Color(0,0,0,100,1,1)
+            self.send_request_Teleport(10.0,1.3,190.0,1)
         elif(self.step == 2):
-            self.send_request_Color(0,255,0,100,0)
-            self.send_request_Teleport(0.0,1.5,180.0)
-            #self.send_request_Spawn(100,0,0,"turtle2")
-            self.step += 1
+            self.desired_x = 10.0  
+            self.desired_y = 1.3
+            self.send_request_Color(0,255,0,100,0,1)
+            self.send_request_Teleport(0.0,1.3,190.0,1)
         elif(self.step == 3):
-            self.send_request_Color(0,0,0,100,1)
-            self.send_request_Teleport(10.0,10.5,180.0)
+            self.send_request_Color(0,255,0,100,1,1)
+            self.send_request_Spawn(6.5,3.0,180.0,"turtle2",2)
+            self.send_request_Color(128,68,0,100,0,2)
+            self.send_request_Teleport(3.0,3.0,180.0,1)
             self.step += 1
-        elif(self.step == 4):
-            self.send_request_Teleport(10.0,10.5,180.0)
+        elif(self.step == 5):
+            self.send_request_Color(128,68,0,10,0,1)
+            self.desired_x = 3.0  
+            self.desired_y = 7.5
+            self.desired_x2 = 6.5
+            self.desired_y2 = 7.5
+        elif(self.step == 6):
+            self.desired_x = 4.5  
+            self.desired_y = 9
+            self.desired_x2 = 4.5
+            self.desired_y2 = 9
+        elif(self.step == 7):
+            self.send_request_Color(255,255, 0, 10,1,1)
+        elif(self.step == 8):
+            self.send_request_Teleport(10.0,10.5,180.0,1)
+            self.step += 1
+        elif(self.step == 9):
+            self.send_request_Color(255,255, 0, 100,0,1)
             self.desired_x = 10.0  
             self.desired_y = 10.5
-            self.send_request_Color(255,255, 0, 100,0)
         
 
 def main(args=None):
