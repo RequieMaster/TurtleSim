@@ -1,0 +1,39 @@
+[1.063s] Invoking command in '/home/kass/IntroRob1/ros/src/turtlesim_dibujito': PYTHONPATH=/home/kass/IntroRob1/ros/build/turtlesim_dibujito/prefix_override:/home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/turtlesim_dibujito build --build-base /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build install --record /home/kass/IntroRob1/ros/build/turtlesim_dibujito/install.log --single-version-externally-managed
+[1.402s] running egg_info
+[1.403s] creating ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info
+[1.403s] writing ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/PKG-INFO
+[1.403s] writing dependency_links to ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/dependency_links.txt
+[1.404s] writing entry points to ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/entry_points.txt
+[1.404s] writing requirements to ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/requires.txt
+[1.404s] writing top-level names to ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/top_level.txt
+[1.404s] writing manifest file '../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/SOURCES.txt'
+[1.407s] reading manifest file '../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/SOURCES.txt'
+[1.407s] writing manifest file '../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/SOURCES.txt'
+[1.408s] running build
+[1.408s] running build_py
+[1.408s] creating /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build
+[1.408s] creating /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build/lib
+[1.408s] creating /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build/lib/turtlesim_dibujito
+[1.409s] copying turtlesim_dibujito/turtlesim_dibujito.py -> /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build/lib/turtlesim_dibujito
+[1.409s] copying turtlesim_dibujito/__init__.py -> /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build/lib/turtlesim_dibujito
+[1.409s] running install
+[1.413s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.413s]   warnings.warn(
+[1.413s] running install_lib
+[1.414s] creating /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito
+[1.414s] copying /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build/lib/turtlesim_dibujito/turtlesim_dibujito.py -> /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito
+[1.415s] copying /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build/lib/turtlesim_dibujito/__init__.py -> /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito
+[1.415s] byte-compiling /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito/turtlesim_dibujito.py to turtlesim_dibujito.cpython-310.pyc
+[1.416s] byte-compiling /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito/__init__.py to __init__.cpython-310.pyc
+[1.417s] running install_data
+[1.417s] creating /home/kass/IntroRob1/ros/install/turtlesim_dibujito/share/ament_index
+[1.418s] creating /home/kass/IntroRob1/ros/install/turtlesim_dibujito/share/ament_index/resource_index
+[1.418s] creating /home/kass/IntroRob1/ros/install/turtlesim_dibujito/share/ament_index/resource_index/packages
+[1.418s] copying resource/turtlesim_dibujito -> /home/kass/IntroRob1/ros/install/turtlesim_dibujito/share/ament_index/resource_index/packages
+[1.418s] copying package.xml -> /home/kass/IntroRob1/ros/install/turtlesim_dibujito/share/turtlesim_dibujito
+[1.418s] running install_egg_info
+[1.420s] Copying ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info to /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito-0.0.1-py3.10.egg-info
+[1.421s] running install_scripts
+[1.449s] Installing turtlesim_dibujito script to /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/turtlesim_dibujito
+[1.449s] writing list of installed files to '/home/kass/IntroRob1/ros/build/turtlesim_dibujito/install.log'
+[1.480s] Invoked command in '/home/kass/IntroRob1/ros/src/turtlesim_dibujito' returned '0': PYTHONPATH=/home/kass/IntroRob1/ros/build/turtlesim_dibujito/prefix_override:/home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/turtlesim_dibujito build --build-base /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build install --record /home/kass/IntroRob1/ros/build/turtlesim_dibujito/install.log --single-version-externally-managed

@@ -1,0 +1,24 @@
+running egg_info
+writing ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/PKG-INFO
+writing dependency_links to ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/dependency_links.txt
+writing entry points to ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/entry_points.txt
+writing requirements to ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/requires.txt
+writing top-level names to ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/top_level.txt
+reading manifest file '../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/SOURCES.txt'
+writing manifest file '../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info/SOURCES.txt'
+running build
+running build_py
+copying turtlesim_dibujito/turtlesim_dibujito.py -> /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build/lib/turtlesim_dibujito
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running install_lib
+copying /home/kass/IntroRob1/ros/build/turtlesim_dibujito/build/lib/turtlesim_dibujito/turtlesim_dibujito.py -> /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito
+byte-compiling /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito/turtlesim_dibujito.py to turtlesim_dibujito.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito-0.0.1-py3.10.egg-info' (and everything under it)
+Copying ../../build/turtlesim_dibujito/turtlesim_dibujito.egg-info to /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/python3.10/site-packages/turtlesim_dibujito-0.0.1-py3.10.egg-info
+running install_scripts
+Installing turtlesim_dibujito script to /home/kass/IntroRob1/ros/install/turtlesim_dibujito/lib/turtlesim_dibujito
+writing list of installed files to '/home/kass/IntroRob1/ros/build/turtlesim_dibujito/install.log'

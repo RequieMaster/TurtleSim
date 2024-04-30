@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>turtlebot2_dibujito</name>
+  <version>0.5.0</version>
+  <description>dibujito.</description>
+  <license>Apache License 2.0</license>
+  <author email="carlos.sierra@students.salle.url.edu">Carlos Sierra</author>
+  <author email="sandra.corral@students.salle.url.edu">Sandra Corral</author>
+  <author email="paula.morales@students.salle.url.edu">Paula Morales</author>
+    
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+
+  <exec_depend>astra_camera</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>ros2run</exec_depend>
+  <exec_depend>turtlebot2_drivers</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

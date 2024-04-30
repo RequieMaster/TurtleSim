@@ -1,0 +1,199 @@
+[0.839s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.839s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7ff883ae3df0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ff884324c70>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ff884324c70>>)
+[0.906s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.906s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.906s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.906s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.906s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.906s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.906s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/kass/IntroRob1/ros'
+[0.906s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.907s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.907s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.907s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.907s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.907s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.907s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.907s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.907s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extensions ['ignore', 'ignore_ament_install']
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extension 'ignore'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extension 'ignore_ament_install'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extensions ['colcon_pkg']
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extension 'colcon_pkg'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extensions ['colcon_meta']
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extension 'colcon_meta'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extensions ['ros']
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extension 'ros'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extensions ['cmake', 'python']
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extension 'cmake'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extension 'python'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extensions ['python_setup_py']
+[0.928s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim) by extension 'python_setup_py'
+[0.928s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/install) by extensions ['ignore', 'ignore_ament_install']
+[0.928s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/install) by extension 'ignore'
+[0.928s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/install) ignored
+[0.928s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/log) by extensions ['ignore', 'ignore_ament_install']
+[0.928s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/log) by extension 'ignore'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/log) ignored
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extensions ['ignore', 'ignore_ament_install']
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extension 'ignore'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extension 'ignore_ament_install'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extensions ['colcon_pkg']
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extension 'colcon_pkg'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extensions ['colcon_meta']
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extension 'colcon_meta'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extensions ['ros']
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extension 'ros'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extensions ['cmake', 'python']
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extension 'cmake'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extension 'python'
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extensions ['python_setup_py']
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src) by extension 'python_setup_py'
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extension 'ignore'
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extension 'ignore_ament_install'
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extensions ['colcon_pkg']
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extension 'colcon_pkg'
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extensions ['colcon_meta']
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extension 'colcon_meta'
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extensions ['ros']
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extension 'ros'
+[0.935s] DEBUG:colcon.colcon_core.package_identification:Found ROS schema reference in package manifest in 'TurtleSim/src/turtle_demo_controller'
+[0.935s] WARNING:colcon.colcon_core.package_identification:Failed to parse ROS package manifest in 'TurtleSim/src/turtle_demo_controller': Error(s) in package 'TurtleSim/src/turtle_demo_controller/package.xml':
+Package version "1" does not follow version conventions
+Package 'turtlesim_dibujito' must declare at least one maintainer
+[0.935s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extensions ['cmake', 'python']
+[0.935s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extension 'cmake'
+[0.935s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extension 'python'
+[0.936s] DEBUG:colcon.colcon_core.package_identification:Python package in 'TurtleSim/src/turtle_demo_controller' passes arguments to the setup() function which requires a different identification extension than 'python'
+[0.936s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extensions ['python_setup_py']
+[0.936s] Level 1:colcon.colcon_core.package_identification:_identify(TurtleSim/src/turtle_demo_controller) by extension 'python_setup_py'
+[1.294s] DEBUG:colcon.colcon_core.package_identification:Package 'TurtleSim/src/turtle_demo_controller' with type 'python' and name 'turtle_demo_controller'
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extensions ['ignore', 'ignore_ament_install']
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extension 'ignore'
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extension 'ignore_ament_install'
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extensions ['colcon_pkg']
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extension 'colcon_pkg'
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extensions ['colcon_meta']
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extension 'colcon_meta'
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extensions ['ros']
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extension 'ros'
+[1.297s] DEBUG:colcon.colcon_core.package_identification:Failed to parse potential ROS package manifest in'turtlebot2_dibujito': Error(s) in package 'turtlebot2_dibujito/package.xml':
+Package 'turtlebot2_dibujito' must declare at least one maintainer
+[1.297s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extensions ['cmake', 'python']
+[1.297s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extension 'cmake'
+[1.299s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_dibujito) by extension 'python'
+[1.299s] DEBUG:colcon.colcon_core.package_identification:Package 'turtlebot2_dibujito' with type 'cmake' and name 'turtlebot2_dibujito'
+[1.299s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_drivers) by extensions ['ignore', 'ignore_ament_install']
+[1.299s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_drivers) by extension 'ignore'
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_drivers) by extension 'ignore_ament_install'
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_drivers) by extensions ['colcon_pkg']
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_drivers) by extension 'colcon_pkg'
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_drivers) by extensions ['colcon_meta']
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_drivers) by extension 'colcon_meta'
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_drivers) by extensions ['ros']
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(turtlebot2_drivers) by extension 'ros'
+[1.301s] DEBUG:colcon.colcon_core.package_identification:Package 'turtlebot2_drivers' with type 'ros.ament_cmake' and name 'turtlebot2_drivers'
+[1.301s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.301s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.301s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.301s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.301s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.341s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.341s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.346s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 6 installed packages in /home/kass/SisNav/install
+[1.348s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 281 installed packages in /opt/ros/iron
+[1.352s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 252 installed packages in /opt/ros/humble
+[1.358s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.465s] Level 5:colcon.colcon_core.verb:set package 'turtle_demo_controller' build argument 'cmake_args' from command line to 'None'
+[1.465s] Level 5:colcon.colcon_core.verb:set package 'turtle_demo_controller' build argument 'cmake_target' from command line to 'None'
+[1.465s] Level 5:colcon.colcon_core.verb:set package 'turtle_demo_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.465s] Level 5:colcon.colcon_core.verb:set package 'turtle_demo_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[1.465s] Level 5:colcon.colcon_core.verb:set package 'turtle_demo_controller' build argument 'cmake_clean_first' from command line to 'False'
+[1.465s] Level 5:colcon.colcon_core.verb:set package 'turtle_demo_controller' build argument 'cmake_force_configure' from command line to 'False'
+[1.465s] Level 5:colcon.colcon_core.verb:set package 'turtle_demo_controller' build argument 'ament_cmake_args' from command line to 'None'
+[1.465s] Level 5:colcon.colcon_core.verb:set package 'turtle_demo_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[1.465s] Level 5:colcon.colcon_core.verb:set package 'turtle_demo_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.466s] DEBUG:colcon.colcon_core.verb:Building package 'turtle_demo_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kass/IntroRob1/ros/build/turtle_demo_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kass/IntroRob1/ros/install/turtle_demo_controller', 'merge_install': False, 'path': '/home/kass/IntroRob1/ros/TurtleSim/src/turtle_demo_controller', 'symlink_install': False, 'test_result_base': None}
+[1.467s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_dibujito' build argument 'cmake_args' from command line to 'None'
+[1.467s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_dibujito' build argument 'cmake_target' from command line to 'None'
+[1.467s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_dibujito' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.467s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_dibujito' build argument 'cmake_clean_cache' from command line to 'False'
+[1.467s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_dibujito' build argument 'cmake_clean_first' from command line to 'False'
+[1.467s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_dibujito' build argument 'cmake_force_configure' from command line to 'False'
+[1.467s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_dibujito' build argument 'ament_cmake_args' from command line to 'None'
+[1.467s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_dibujito' build argument 'catkin_cmake_args' from command line to 'None'
+[1.467s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_dibujito' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.467s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot2_dibujito' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kass/IntroRob1/ros/build/turtlebot2_dibujito', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kass/IntroRob1/ros/install/turtlebot2_dibujito', 'merge_install': False, 'path': '/home/kass/IntroRob1/ros/turtlebot2_dibujito', 'symlink_install': False, 'test_result_base': None}
+[1.468s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_drivers' build argument 'cmake_args' from command line to 'None'
+[1.468s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_drivers' build argument 'cmake_target' from command line to 'None'
+[1.468s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_drivers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.468s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_drivers' build argument 'cmake_clean_cache' from command line to 'False'
+[1.468s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_drivers' build argument 'cmake_clean_first' from command line to 'False'
+[1.468s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_drivers' build argument 'cmake_force_configure' from command line to 'False'
+[1.468s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_drivers' build argument 'ament_cmake_args' from command line to 'None'
+[1.468s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_drivers' build argument 'catkin_cmake_args' from command line to 'None'
+[1.468s] Level 5:colcon.colcon_core.verb:set package 'turtlebot2_drivers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.468s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot2_drivers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kass/IntroRob1/ros/build/turtlebot2_drivers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kass/IntroRob1/ros/install/turtlebot2_drivers', 'merge_install': False, 'path': '/home/kass/IntroRob1/ros/turtlebot2_drivers', 'symlink_install': False, 'test_result_base': None}
+[1.469s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.472s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.473s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kass/IntroRob1/ros/TurtleSim/src/turtle_demo_controller'
+[1.487s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.487s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.487s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.494s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/kass/IntroRob1/ros/turtlebot2_dibujito'
+[1.496s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.496s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.509s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/kass/IntroRob1/ros/turtlebot2_drivers' with build type 'ament_cmake'
+[1.509s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/kass/IntroRob1/ros/turtlebot2_drivers'
+[1.511s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.511s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.903s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kass/IntroRob1/ros/build/turtlebot2_dibujito': /usr/bin/cmake /home/kass/IntroRob1/ros/turtlebot2_dibujito -DCMAKE_INSTALL_PREFIX=/home/kass/IntroRob1/ros/install/turtlebot2_dibujito
+[1.908s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kass/IntroRob1/ros/build/turtlebot2_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kass/SisNav/install/secret_robot:/home/kass/SisNav/install/primer_node:/home/kass/SisNav/install/mirador_node:/opt/ros/iron:/opt/ros/humble /usr/bin/cmake /home/kass/IntroRob1/ros/turtlebot2_drivers -DCMAKE_INSTALL_PREFIX=/home/kass/IntroRob1/ros/install/turtlebot2_drivers
+[2.639s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kass/IntroRob1/ros/build/turtlebot2_drivers' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kass/SisNav/install/secret_robot:/home/kass/SisNav/install/primer_node:/home/kass/SisNav/install/mirador_node:/opt/ros/iron:/opt/ros/humble /usr/bin/cmake /home/kass/IntroRob1/ros/turtlebot2_drivers -DCMAKE_INSTALL_PREFIX=/home/kass/IntroRob1/ros/install/turtlebot2_drivers
+[2.654s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot2_drivers)
+[2.667s] Level 1:colcon.colcon_core.environment:checking '/home/kass/IntroRob1/ros/install/turtlebot2_drivers' for CMake module files
+[2.668s] Level 1:colcon.colcon_core.environment:checking '/home/kass/IntroRob1/ros/install/turtlebot2_drivers' for CMake config files
+[2.669s] Level 1:colcon.colcon_core.environment:checking '/home/kass/IntroRob1/ros/install/turtlebot2_drivers/bin'
+[2.669s] Level 1:colcon.colcon_core.environment:checking '/home/kass/IntroRob1/ros/install/turtlebot2_drivers/lib/pkgconfig/turtlebot2_drivers.pc'
+[2.669s] Level 1:colcon.colcon_core.environment:checking '/home/kass/IntroRob1/ros/install/turtlebot2_drivers/lib/python3.10/site-packages'
+[2.670s] Level 1:colcon.colcon_core.environment:checking '/home/kass/IntroRob1/ros/install/turtlebot2_drivers/bin'
+[2.673s] INFO:colcon.colcon_core.shell:Creating package script '/home/kass/IntroRob1/ros/install/turtlebot2_drivers/share/turtlebot2_drivers/package.ps1'
+[2.675s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kass/IntroRob1/ros/install/turtlebot2_drivers/share/turtlebot2_drivers/package.dsv'
+[2.676s] INFO:colcon.colcon_core.shell:Creating package script '/home/kass/IntroRob1/ros/install/turtlebot2_drivers/share/turtlebot2_drivers/package.sh'
+[2.677s] INFO:colcon.colcon_core.shell:Creating package script '/home/kass/IntroRob1/ros/install/turtlebot2_drivers/share/turtlebot2_drivers/package.bash'
+[2.679s] INFO:colcon.colcon_core.shell:Creating package script '/home/kass/IntroRob1/ros/install/turtlebot2_drivers/share/turtlebot2_drivers/package.zsh'
+[2.680s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kass/IntroRob1/ros/install/turtlebot2_drivers/share/colcon-core/packages/turtlebot2_drivers)
+[4.374s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.375s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.375s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '1'
+[4.375s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.387s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.387s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.387s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.415s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.418s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kass/IntroRob1/ros/install/local_setup.ps1'
+[4.421s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kass/IntroRob1/ros/install/_local_setup_util_ps1.py'
+[4.425s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kass/IntroRob1/ros/install/setup.ps1'
+[4.428s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kass/IntroRob1/ros/install/local_setup.sh'
+[4.429s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kass/IntroRob1/ros/install/_local_setup_util_sh.py'
+[4.430s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kass/IntroRob1/ros/install/setup.sh'
+[4.433s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kass/IntroRob1/ros/install/local_setup.bash'
+[4.434s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kass/IntroRob1/ros/install/setup.bash'
+[4.437s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kass/IntroRob1/ros/install/local_setup.zsh'
+[4.438s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kass/IntroRob1/ros/install/setup.zsh'
