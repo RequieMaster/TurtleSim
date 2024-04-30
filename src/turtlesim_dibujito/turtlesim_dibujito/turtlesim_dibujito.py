@@ -26,32 +26,32 @@ class TurtleController(Node):
 
         # Publishers and Subscriber
         self.my_pose_sub = self.create_subscription(Pose, "/turtle1/pose", self.pose_callback, 10)
-        self.my_pose_sub2 = self.create_subscription(Pose, "/turtle2/pose", self.pose_callback, 10)
+        self.my_pose_sub2 = self.create_subscription(Pose, "/turtle/pose", self.pose_callback, 10)
         
         #http://wiki.ros.org/turtlesim#Published_Topics
         
         	#Velocity
         self.my_vel_command = self.create_publisher(Twist, "/turtle1/cmd_vel", 10) 
-        self.my_vel_command2 = self.create_publisher(Twist, "/turtle2/cmd_vel", 10) 
+        self.my_vel_command2 = self.create_publisher(Twist, "/turtle/cmd_vel", 10) 
       
      ###TODO Servicion no se pueden usar para hacer publishers, usar mensajes custom
         	#Color
         self.cliColor = self.create_client(SetPen, '/turtle1/set_pen')
         self.reqColor = SetPen.Request()
-        self.cliColor2 = self.create_client(SetPen, '/turtle2/set_pen')
+        self.cliColor2 = self.create_client(SetPen, '/turtle/set_pen')
         self.reqColor2 = SetPen.Request()
         
         	#Teleport
         self.cliTp = self.create_client(TeleportAbsolute, '/turtle1/teleport_absolute')
         self.reqTp = TeleportAbsolute.Request()
-        self.cliTp2 = self.create_client(TeleportAbsolute, '/turtle2/teleport_absolute')
+        self.cliTp2 = self.create_client(TeleportAbsolute, '/turtle/teleport_absolute')
         self.reqTp2 = TeleportAbsolute.Request()
         
         	#Spawn
-        self.cliSpawn = self.create_client(Spawn, '/turtle1/spawn')
+        self.cliSpawn = self.create_client(Spawn, 'spawn')
         self.reqSpawn = Spawn.Request()
-        self.cliSpawn2 = self.create_client(Spawn, '/turtle2/spawn')
-        self.reqSpawn2 = Spawn.Request()
+        
+            #Kill
         
 
     def send_request_Color(self,r, g, b, width, off, num_turtle):
@@ -88,28 +88,20 @@ class TurtleController(Node):
         #rclpy.spin_until_future_complete(self, future)
         return future.result()
     
-    def send_request_Spawn(self, x, y, theta, name, num_turtle):
+    def send_request_Spawn(self, x, y, theta, name):
         self.get_logger().info("req Spawn")
-        if(num_turtle == 1):
-            self.reqSpawn.x = x
-            self.reqSpawn.y = y
-            self.reqSpawn.theta = theta
-            self.reqSpawn.name = name
-            future = self.cliSpawn.call_async(self.reqSpawn)
-        else:
-            self.reqSpawn2.x = x
-            self.reqSpawn2.y = y
-            self.reqSpawn2.theta = theta
-            self.reqSpawn2.name = name
-            future = self.cliSpawn2.call_async(self.reqSpawn2)
+        self.reqSpawn.x = x
+        self.reqSpawn.y = y
+        self.reqSpawn.theta = theta
+        self.reqSpawn.name = name
+        future = self.cliSpawn.call_async(self.reqSpawn)
         #rclpy.spin_until_future_complete(self, future)
-        return future.result()  
+        return future.result()
 
-    def pose_callback(self, msg: Pose):
+        
+    def update_pose(self, err_x, err_y,msg):
         self.get_logger().info(f"Current x={msg.x} current y={msg.y} and current angle = {msg.theta}")
         # Calculate errors in position
-        err_x = self.desired_x - msg.x
-        err_y = self.desired_y - msg.y
         err_dist = (err_x**2+err_y**2)**0.5
         
         if(err_dist < self.err_threshhold):
@@ -130,17 +122,14 @@ class TurtleController(Node):
             err_theta -= 2.0 * math.pi
         while err_theta < -math.pi:
             err_theta += 2.0 * math.pi
-        self.get_logger().info(f"Desired Angle = {desired_theta} current angle {msg.theta} Error angle {err_theta}")
+        #self.get_logger().info(f"Desired Angle = {desired_theta} current angle {msg.theta} Error angle {err_theta}")
         # P (ID not required) for linear velocity (distance control)
 
         Kp_dist = 0.4
             
-
-
         # P (ID not required) constants for angular velocity (heading control)
         Kp_theta = 2
         
-
         # TODO: Add integral and derivative calculations for complete PID
 
         # PID control for linear velocity
@@ -152,9 +141,10 @@ class TurtleController(Node):
         a_v = Kp_theta * err_theta  
 
         # Send the velocities
-        self.my_velocity_cont(l_v, a_v)
+        return l_v,a_v
 
-    def my_velocity_cont(self, l_v, a_v):
+
+    def my_velocity_cont(self, l_v, a_v, turt):
         self.get_logger().info("vel controller")
         
         #Actualiza SetPen, Teleport y Spawn
@@ -164,8 +154,22 @@ class TurtleController(Node):
         my_msg = Twist()
         my_msg.linear.x = l_v
         my_msg.angular.z = a_v
-        self.my_vel_command.publish(my_msg)
-		
+        if(turt == 1):
+            self.my_vel_command.publish(my_msg)
+        else:
+            self.my_vel_command2.publish(my_msg)
+
+    def pose_callback(self, msg: Pose):
+        err_x = self.desired_x - msg.x
+        err_y = self.desired_y - msg.y
+        l_v, a_v = self.update_pose(err_x, err_y, msg)
+        self.my_velocity_cont(l_v, a_v, 1)
+
+    def pose_callback2(self, msg: Pose):
+        err_x = self.desired_x2 - msg.x
+        err_y = self.desired_y2 - msg.y
+        l_v, a_v = self.update_pose(err_x, err_y, msg)
+        self.my_velocity_cont(l_v, a_v, 2)
 
 
     def step_controller(self):
@@ -184,11 +188,12 @@ class TurtleController(Node):
             self.send_request_Color(0,255,0,100,0,1)
             self.send_request_Teleport(0.0,1.3,190.0,1)
         elif(self.step == 3):
+            self.desired_x = 3.0  
+            self.desired_y = 3.0
             self.send_request_Color(0,255,0,100,1,1)
-            self.send_request_Spawn(6.5,3.0,180.0,"turtle2",2)
-            self.send_request_Color(128,68,0,100,0,2)
+            #self.send_request_Spawn(6.5,3.0,180.0,"turtle")
+            #self.send_request_Color(128,68,0,100,0,2)
             self.send_request_Teleport(3.0,3.0,180.0,1)
-            self.step += 1
         elif(self.step == 5):
             self.send_request_Color(128,68,0,10,0,1)
             self.desired_x = 3.0  
