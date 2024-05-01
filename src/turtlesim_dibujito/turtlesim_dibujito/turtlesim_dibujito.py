@@ -26,7 +26,7 @@ class TurtleController(Node):
 
         # Publishers and Subscriber
         self.my_pose_sub = self.create_subscription(Pose, "/turtle1/pose", self.pose_callback, 10)
-        self.my_pose_sub2 = self.create_subscription(Pose, "/turtle/pose", self.pose_callback, 10)
+        self.my_pose_sub2 = self.create_subscription(Pose, "/turtle/pose", self.pose_callback2, 10)
         
         #http://wiki.ros.org/turtlesim#Published_Topics
         
@@ -52,6 +52,8 @@ class TurtleController(Node):
         self.reqSpawn = Spawn.Request()
         
             #Kill
+        self.cliKill = self.create_client(Kill, 'kill')
+        self.reqKill = Kill.Request()
         
 
     def send_request_Color(self,r, g, b, width, off, num_turtle):
@@ -95,6 +97,13 @@ class TurtleController(Node):
         self.reqSpawn.theta = theta
         self.reqSpawn.name = name
         future = self.cliSpawn.call_async(self.reqSpawn)
+        #rclpy.spin_until_future_complete(self, future)
+        return future.result()
+        
+    def send_request_Kill(self, name):
+        self.get_logger().info("req Kill")
+        self.reqKill.name = name
+        future = self.cliKill.call_async(self.reqKill)
         #rclpy.spin_until_future_complete(self, future)
         return future.result()
 
@@ -145,7 +154,6 @@ class TurtleController(Node):
 
 
     def my_velocity_cont(self, l_v, a_v, turt):
-        self.get_logger().info("vel controller")
         
         #Actualiza SetPen, Teleport y Spawn
         self.step_controller()
@@ -154,18 +162,21 @@ class TurtleController(Node):
         my_msg = Twist()
         my_msg.linear.x = l_v
         my_msg.angular.z = a_v
+        self.get_logger().info(f"turtle {turt} velocity command publish")   
         if(turt == 1):
             self.my_vel_command.publish(my_msg)
         else:
             self.my_vel_command2.publish(my_msg)
 
     def pose_callback(self, msg: Pose):
+        self.get_logger().info(f"turtle 1 pose callback")
         err_x = self.desired_x - msg.x
         err_y = self.desired_y - msg.y
         l_v, a_v = self.update_pose(err_x, err_y, msg)
         self.my_velocity_cont(l_v, a_v, 1)
 
     def pose_callback2(self, msg: Pose):
+        self.get_logger().info(f"turtle 2 pose callback")   
         err_x = self.desired_x2 - msg.x
         err_y = self.desired_y2 - msg.y
         l_v, a_v = self.update_pose(err_x, err_y, msg)
@@ -179,22 +190,23 @@ class TurtleController(Node):
             self.step += 1
         elif(self.step == 1):
             self.desired_x = 10.0  
-            self.desired_y = 1.3
-            self.send_request_Color(0,0,0,100,1,1)
-            self.send_request_Teleport(10.0,1.3,190.0,1)
+            self.desired_y = 2.3
+            self.send_request_Color(0,0,0,200,1,1)
+            self.send_request_Teleport(10.0,2.3,190.0,1)
         elif(self.step == 2):
-            self.desired_x = 10.0  
-            self.desired_y = 1.3
+            self.desired_x = 0.0  
+            self.desired_y = 2.3
             self.send_request_Color(0,255,0,100,0,1)
-            self.send_request_Teleport(0.0,1.3,190.0,1)
+            self.send_request_Teleport(0.0,2.3,190.0,1)
         elif(self.step == 3):
             self.desired_x = 3.0  
             self.desired_y = 3.0
             self.send_request_Color(0,255,0,100,1,1)
-            #self.send_request_Spawn(6.5,3.0,180.0,"turtle")
-            #self.send_request_Color(128,68,0,100,0,2)
-            self.send_request_Teleport(3.0,3.0,180.0,1)
+            self.send_request_Spawn(6.5,3.0,70.0,"turtle")
+            self.send_request_Color(0,0,0,10,1,2)
+            self.send_request_Teleport(3.0,3.0,70.0,1)
         elif(self.step == 5):
+            self.send_request_Color(128,68,0,10,0,2)
             self.send_request_Color(128,68,0,10,0,1)
             self.desired_x = 3.0  
             self.desired_y = 7.5
@@ -206,7 +218,7 @@ class TurtleController(Node):
             self.desired_x2 = 4.5
             self.desired_y2 = 9
         elif(self.step == 7):
-            self.send_request_Color(255,255, 0, 10,1,1)
+            self.send_request_Color(0,0,0,10,1,1)
         elif(self.step == 8):
             self.send_request_Teleport(10.0,10.5,180.0,1)
             self.step += 1
@@ -214,6 +226,9 @@ class TurtleController(Node):
             self.send_request_Color(255,255, 0, 100,0,1)
             self.desired_x = 10.0  
             self.desired_y = 10.5
+        elif(self.step == 130):
+            self.send_request_Kill("turtle")
+            self.send_request_Kill("turtle1")
         
 
 def main(args=None):
